@@ -1,0 +1,89 @@
+.footer{
+    position: relative;
+    background-color:$Dark-Blue;
+    width: 100%;
+    padding-bottom: 5rem;
+
+    @include respond(tab-port){
+        text-align: center;
+    }
+
+
+    &__logo{
+        text-align: center;
+        margin-top: 5rem ;
+        margin-bottom: 7rem;
+
+        @include respond(tab-port){
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__icon-box{
+        text-align: center;
+
+        @include respond(tab-port){
+            margin-bottom: -5rem;
+            }
+    }
+
+    &__icon  {
+      
+        &:not(:last-child){
+            margin-right: .9rem;
+        }
+    }
+
+    &__list{
+            margin-top: 5rem;
+            list-style: none;
+
+            @include respond(tab-port){
+                margin-bottom: -6rem;
+                }
+    }
+
+    &__item{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__link{
+        &:visited,
+        &:link{
+            text-decoration: none;
+            color: $Light-Grayish-Blue;
+            font-size: 1.7rem;
+            font-weight: 300;
+            margin-bottom: 5rem;
+            transition: color .3s;
+        }
+
+        &:hover{
+            color:$Lime-Green;
+        }
+    }
+
+    &__button{
+        text-align: right;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+
+        @include respond(tab-port){
+         text-align: center;
+         margin-top: 8rem;
+        }
+    }
+
+    &__text{
+        color:$Grayish-Blue;
+        text-align: right;
+        font-size: 1.8rem;
+        font-weight: 300;
+
+        @include respond(tab-port){
+           text-align: center;
+        }
+    }
+}

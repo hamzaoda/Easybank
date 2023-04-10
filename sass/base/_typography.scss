@@ -1,0 +1,29 @@
+body{
+    font-family: 'Public Sans', sans-serif;
+}
+
+.heading-primary{
+    font-size: 5rem;
+    font-weight: 300;
+    color: $Dark-Blue;
+    display: inline-block;
+}
+
+.heading-secondary{
+    font-size: 4rem;
+    font-weight: 300;
+    color: $Dark-Blue;
+}
+
+.heading-tertiary{
+    font-size: 1.8rem;
+    font-weight: 400;
+    color:$Dark-Blue;
+}
+
+.paragraph{
+    line-height: 2.5rem;
+    font-size:1.6rem ;
+    font-weight: 300;
+    color:$Grayish-Blue;
+}

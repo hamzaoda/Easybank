@@ -1,0 +1,126 @@
+.navigation{
+     opacity: 0;
+     visibility: hidden;
+     display: none;
+
+    @include respond(tab-port){
+        opacity: 1;
+        visibility: visible;
+        display: unset;
+        position: fixed;
+        top: 9%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 200;
+       
+        &__checkbox{display: none;}
+
+        &__button{
+            position: absolute;
+            top: -7rem;
+            right: 3rem;
+        }
+
+        &__icon{
+            position: relative;
+            top: 2.5rem;
+            margin-left: 3rem;
+            &,
+            &::after,
+            &::before{
+                width: 4rem;
+                height: 1.6px;
+                background-color:$Dark-Blue;
+                display: inline-block;
+            }
+
+            &::before,
+            &::after{
+                content:"";
+                position: absolute;
+                left: 0;
+                transition: all .2s;
+            }
+    
+            &::before{ top: -.8rem; }
+            &::after{ top: .8rem; }
+        }
+
+    
+        &__background{
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            background-color:$White;
+            position: relative;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 0;
+            padding: 2rem 0 ;
+            border-radius:3px;
+            box-shadow: 0 1rem 2rem rgba(black,.2);
+            text-align: center;
+            transition: all .5s ease-out;
+            display: inline-block;
+
+        }
+    
+        &__nav{
+
+            &__list{
+               @include center;
+                list-style: none;
+                font-weight: 300;
+                font-size: 2.5rem;
+            }
+    
+            &__item{
+                text-align: center;
+                // margin-left: 5rem;
+                &:not(:last-child){
+                    margin-bottom: 4rem;
+                }
+            }
+    
+            &__link{
+                &:visited,
+                &:link{
+                    color: $Dark-Blue;
+                    text-decoration: none;
+                }
+
+                &:hover{
+                    border-bottom: 2px solid  $Lime-Green;
+                }
+            }
+        }
+    }
+
+
+      //Functionality
+    //   &__checkbox:checked ~&__bg{
+    //       opacity: 1;
+    //   }
+
+    &__checkbox:checked ~ &__background{
+        opacity: 1;
+        visibility: visible;
+        height: 40rem;
+
+    }
+
+    &__checkbox:checked ~ &__button &__icon{
+        background-color:transparent;
+    }
+    &__checkbox:checked ~ &__button &__icon::after{
+        top:0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:checked ~ &__button &__icon::before{
+        top:0;
+        transform: rotate(-135deg);
+    }
+}
